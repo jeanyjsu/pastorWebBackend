@@ -9,7 +9,6 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware for cross origin resource sharing and parsing JSON
-app.use(cors());
 app.use(express.json());
 
 var whitelist = ["http://localhost:5000", "https://eveningswithpastorfaheem.netlify.app"];
