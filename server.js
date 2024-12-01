@@ -10,8 +10,9 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware for cross origin resource sharing and parsing JSON
 app.use(express.json());
-app.use(cors());
-
+app.use(cors({
+    origin: '*', // Allow requests from any origin
+}));
 // Define mongoose schemas and model for the collection
 const pastorVidSchema = new mongoose.Schema({
     name: String,
