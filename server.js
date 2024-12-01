@@ -10,10 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware for cross origin resource sharing and parsing JSON
 app.use(express.json());
-
-var whitelist = ["http://localhost:5000", "https://eveningswithpastorfaheem.netlify.app"];
-var corsOptions = { origin: whitelist, credentials: true };
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Define mongoose schemas and model for the collection
 const pastorVidSchema = new mongoose.Schema({
