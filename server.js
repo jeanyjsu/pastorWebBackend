@@ -227,6 +227,10 @@ app.delete('/api/event/:id', async (req, res) => {
     }
 });
 
+app.get('/healthCheck', async (req, res) => {
+    res.status(200).send('ok');
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
