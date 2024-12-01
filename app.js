@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./connection');
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -95,6 +96,7 @@ app.get('/api/video', async (req, res) => {
         console.log('Video URL:', video?.url);
         console.log('Query result:', video);
         if (video) {
+            console.log('Video found:', video.url);
             res.json({ url: video.url });
         } else {
             console.error('No video found in collection pastorVid');
