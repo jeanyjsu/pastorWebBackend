@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+var whitelist = ["http://localhost:5000", "https://eveningswithpastorfaheem.netlify.app"];
+var corsOptions = { origin: whitelist, credentials: true };
+app.use(cors(corsOptions));
+
 // Define mongoose schemas and model for the collection
 const pastorVidSchema = new mongoose.Schema({
     name: String,
